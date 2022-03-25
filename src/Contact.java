@@ -8,6 +8,7 @@ public class Contact {
     private String zip;
     private String email;
 
+
     public String getFirstname() {
         return firstname;
     }
@@ -72,6 +73,8 @@ public class Contact {
         this.email = email;
     }
 
+
+
     @Override
     public String toString() {
         return "Contact{" +
@@ -85,4 +88,5 @@ public class Contact {
                 ", email='" + email + '\'' +
                 '}';
     }
+
 }
