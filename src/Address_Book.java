@@ -30,11 +30,11 @@ public class Address_Book {
 
 
     public void editContact() {
-        Contact contact = new Contact();
         System.out.println("Enter the First Name");
         fname = sc.next();
+        int n=0;
         for (i = 0; i < contactArrayList.size(); i++) {
-            contact = contactArrayList.get(i);
+            Contact contact = contactArrayList.get(i);
             if (fname.equals(contact.getFirstname())) {
                 System.out.println("Contact is present");
                 System.out.println("Enter the Address");
@@ -49,32 +49,39 @@ public class Address_Book {
                 contact.setZip(sc.next());
                 System.out.println("Enter the Email");
                 contact.setEmail(sc.next());
+                n=1;
             } else {
-                System.out.println("Contact is not Present");
+                n=0;
             }
+        }
+        if(n==0){
+            System.out.println("Contact is not Present");
         }
     }
 
     public void deleteContact() {
-        Contact contact = new Contact();
         System.out.println("Enter the First Name");
         fname = sc.next();
+        int n=0;
         for (i = 0; i < contactArrayList.size(); i++) {
-            contact = contactArrayList.get(i);
+            Contact contact = contactArrayList.get(i);
             if (fname.equals((contact.getFirstname()))) {
                 contactArrayList.remove(i);
                 System.out.println("Contact Named " + fname.toUpperCase() + " has been Deleted");
+                n=1;
             }
             else{
-                System.out.println("Contact is not Present");
+                n=0;
             }
+        }
+        if (n==0){
+            System.out.println("Contact is not Present");
         }
     }
 
     public void showContact() {
-        Contact contact = new Contact();
         for (i = 0; i < contactArrayList.size(); i++) {
-            contact = contactArrayList.get(i);
+            Contact contact = contactArrayList.get(i);
             System.out.println(contact.toString());
         }
     }
